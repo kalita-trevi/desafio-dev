@@ -33,7 +33,10 @@ export interface OrderItem {
 }
 
 export const productsAPI = {
-  getAll: () => api.get<Product[]>("/products"),
+  getAll: (provider?: string) => {
+    const params = provider && provider !== 'all' ? { provider } : {};
+    return api.get<Product[]>("/products", { params });
+  },
   getById: (id: string, provider: string) =>
     api.get<Product>(`/products/${provider}/${id}`),
 };

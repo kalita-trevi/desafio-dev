@@ -132,27 +132,31 @@ const Home: React.FC = () => {
     "all" | "brazilian" | "european"
   >("all");
 
+  const fetchProducts = async (provider?: string) => {
+    setLoading(true);
+    try {
+      const response = await productsAPI.getAll(provider);
+      setProducts(response.data);
+    } catch (error) {
+      console.error("Erro ao carregar produtos:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await productsAPI.getAll();
-        setProducts(response.data);
-      } catch (error) {
-        console.error("Erro ao carregar produtos:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchProducts();
   }, []);
+
+  useEffect(() => {
+    fetchProducts(filterProvider);
+  }, [filterProvider]);
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name
       .toLowerCase()
       .includes(searchTerm.toLowerCase());
-    const matchesProvider =
-      filterProvider === "all" || product.provider === filterProvider;
-    return matchesSearch && matchesProvider;
+    return matchesSearch;
   });
 
   if (loading) {

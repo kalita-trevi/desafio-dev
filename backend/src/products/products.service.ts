@@ -48,7 +48,19 @@ export class ProductsService {
     };
   }
 
-  async findAll(): Promise<Product[]> {
+  async findAll(provider?: string): Promise<Product[]> {
+    if (provider && provider !== 'all') {
+      // Filtrar por fornecedor específico
+      if (provider === 'brazilian') {
+        const brRes = await lastValueFrom(this.http.get(this.brazilianUrl));
+        return brRes.data.map((p: any) => this.mapBrazilian(p));
+      } else if (provider === 'european') {
+        const euRes = await lastValueFrom(this.http.get(this.europeanUrl));
+        return euRes.data.map((p: any) => this.mapEuropean(p));
+      }
+    }
+    
+    // Retornar todos os produtos (comportamento padrão)
     const [brRes, euRes] = await Promise.all([
       lastValueFrom(this.http.get(this.brazilianUrl)),
       lastValueFrom(this.http.get(this.europeanUrl)),

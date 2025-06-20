@@ -6,8 +6,8 @@ export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}
 
   @Get()
-  findAll() {
-    return this.productsService.findAll();
+  findAll(@Query('provider') provider?: string) {
+    return this.productsService.findAll(provider);
   }
 
   @Get(':provider/:id')
