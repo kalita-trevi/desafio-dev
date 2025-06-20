@@ -27,4 +27,18 @@ yarn-error.log*
 .DS_Store
 
 # Prisma
-/backend/generated/prisma 
+/backend/generated/prisma
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+
+# Temporary files
+*.tmp
+*.temp 
