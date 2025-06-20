@@ -13,12 +13,9 @@ Para executar o projeto localmente, siga os passos abaixo:
 
 ### Instalação
 
-1. Clone o repositório:
-   ```sh
-   git clone https://github.com/kalita-trevi/desafio-dev/tree/main/frontend
-   ```
-2. Navegue até o diretório do projeto:
-   ```sh
+### Navegue até o diretório do projeto:
+
+1. ```sh
    cd frontend
    ```
 3. Instale as dependências:
