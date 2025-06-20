@@ -28,10 +28,16 @@ Aqui estão algumas das principais telas da aplicação:
 ![Carrinho de Compras](./docs/screenshots/03-cart.png)
 
 ### Carrinho Vazio
-![Carrinho Vazio](./docs/screenshots/05-empty-cart.png)
+![Carrinho Vazio](./docs/screenshots/04-empty-cart.png)
+
+### Checkout
+![Checkout](./docs/screenshots/05-checkout.png)
+
+### Pedido Confirmado
+![Pedido Confirmado](./docs/screenshots/06-order-success.png)
 
 ### Meus Pedidos
-![Meus Pedidos](./docs/screenshots/06-orders.png)
+![Meus Pedidos](./docs/screenshots/07-orders.png)
 
 ### Nenhum Pedido Encontrado
-![Nenhum Pedido Encontrado](./docs/screenshots/07-no-orders.png)
+![Nenhum Pedido Encontrado](./docs/screenshots/08-no-orders.png)
