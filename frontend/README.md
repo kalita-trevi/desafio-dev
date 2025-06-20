@@ -15,7 +15,7 @@ Para executar o projeto localmente, siga os passos abaixo:
 
 1. Clone o repositório:
    ```sh
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/kalita-trevi/desafio-dev/tree/main/frontend
    ```
 2. Navegue até o diretório do projeto:
    ```sh
