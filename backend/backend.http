@@ -1,0 +1,29 @@
+### Listar todos os produtos
+GET http://localhost:3000/products
+
+### Buscar produto específico (exemplo)
+GET http://localhost:3000/products/brazilian/1
+
+### Finalizar compra (criar pedido)
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "customerName": "Fulano de Tal",
+  "customerEmail": "fulano@example.com",
+  "items": [
+    {
+      "productId": "1",
+      "provider": "brazilian",
+      "quantity": 2
+    },
+    {
+      "productId": "2",
+      "provider": "european",
+      "quantity": 1
+    }
+  ]
+}
+
+### Listar pedidos
+GET http://localhost:3000/orders

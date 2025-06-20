@@ -2,6 +2,7 @@ import React, {
   createContext,
   useContext,
   useState,
+  useEffect,
   type ReactNode,
 } from "react";
 
@@ -28,24 +29,27 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export const CartProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const [items, setItems] = useState<CartItem[]>([]);
+  const [items, setItems] = useState<CartItem[]>(() => {
+    const storedItems = localStorage.getItem("cart");
+    return storedItems ? JSON.parse(storedItems) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(items));
+  }, [items]);
+
   const addToCart = (item: CartItem) => {
     setItems((prevItems) => {
       const existingItem = prevItems.find(
-        (cartItem) =>
-          cartItem.productId === item.productId &&
-          cartItem.provider === item.provider
+        (i) => i.productId === item.productId && i.provider === item.provider
       );
-
       if (existingItem) {
-        return prevItems.map((cartItem) =>
-          cartItem.productId === item.productId &&
-          cartItem.provider === item.provider
-            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
-            : cartItem
+        return prevItems.map((i) =>
+          i.productId === item.productId && i.provider === item.provider
+            ? { ...i, quantity: i.quantity + item.quantity }
+            : i
         );
       }
-
       return [...prevItems, item];
     });
   };

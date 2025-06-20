@@ -157,11 +157,8 @@ const Checkout: React.FC = () => {
       const orderData = {
         customerName: formData.customerName,
         customerEmail: formData.customerEmail,
-        total: getTotalPrice(),
         items: items.map((item) => ({
           productId: item.productId,
-          productName: item.productName,
-          price: item.price,
           quantity: item.quantity,
           provider: item.provider,
         })),

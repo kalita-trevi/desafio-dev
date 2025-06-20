@@ -1,60 +1,41 @@
-# Projeto Frontend
+# Frontend - E-commerce
 
-Este é um projeto de frontend desenvolvido com React, TypeScript e Vite.
+Este é o projeto de frontend para a aplicação de e-commerce, desenvolvido com React, TypeScript e Vite. Ele consome a API do [backend](/backend/README.md) para exibir produtos e gerenciar pedidos.
 
-## Começando
+## Tecnologias Utilizadas
 
-Para executar o projeto localmente, siga os passos abaixo:
+- **React**
+- **TypeScript**
+- **Vite**
+- **Styled Components**
+- **React Router**
+- **Axios**
 
-### Pré-requisitos
+## Como Executar
 
-- Node.js (versão 18.x ou superior)
-- npm (geralmente vem com o Node.js)
+**Importante:** Certifique-se de que o projeto [backend](/backend/README.md) esteja em execução antes de iniciar o frontend.
 
-### Instalação
+1. **Navegue até a pasta do frontend:**
 
-### Navegue até o diretório do projeto:
-
-1. ```sh
+   ```sh
    cd frontend
    ```
-3. Instale as dependências:
+2. **Instale as dependências:**
+
    ```sh
    npm install
    ```
+3. **Inicie o servidor de desenvolvimento:**
 
-### Executando a Aplicação
+   ```sh
+   npm run dev
+   ```
 
-Para iniciar o servidor de desenvolvimento, execute o seguinte comando:
-
-```sh
-npm run dev
-```
-
-Isso iniciará a aplicação em modo de desenvolvimento. Abra [http://localhost:5173](http://localhost:5173) (ou a porta que o Vite indicar) para visualizá-la no navegador.
-
-A aplicação também utiliza um servidor mock para simular uma API. Para iniciá-lo, execute:
-
-```sh
-npm run server
-```
+A aplicação estará disponível em `http://localhost:5173`.
 
 ## Scripts Disponíveis
-
-No diretório do projeto, você pode executar:
 
 - `npm run dev`: Inicia a aplicação em modo de desenvolvimento.
 - `npm run build`: Compila a aplicação para produção.
 - `npm run lint`: Executa o linter para verificar a qualidade do código.
-- `npm run preview`: Inicia um servidor local para visualizar a versão de produção.
-- `npm run server`: Inicia o servidor mock.
-
-## Tecnologias Utilizadas
-
-- **React**: Biblioteca para construção de interfaces de usuário.
-- **TypeScript**: Superset de JavaScript que adiciona tipagem estática.
-- **Vite**: Ferramenta de build moderna e rápida.
-- **Styled Components**: Para estilização de componentes.
-- **React Router DOM**: Para gerenciamento de rotas.
-- **Axios**: Para realizar requisições HTTP.
-- **ESLint**: Para garantir a qualidade e padronização do código.
+- `npm run preview`: Inicia um servidor local para visualizar a build de produção.
